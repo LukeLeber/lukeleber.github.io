@@ -1,0 +1,70 @@
+body
+{
+    background-image: url("../img/background.png");
+    background-size: cover;
+    font-family:monospace;
+}
+
+noscript
+{
+    text-align:center;
+}
+
+.content
+{
+    width:100%;
+}
+
+hr
+{
+    width:90%;
+}
+
+.personal
+{
+    padding-left:5%;
+}
+
+.personal img
+{
+    float: left;
+    display:inline;
+    width: 10%;
+    height: 10%;
+    margin-right: 1.5%;
+    border-radius: 25%;
+}
+
+
+.social-media
+{
+    display:inline-flex;
+    font-size:8;
+}
+
+.social-media a img
+{
+    width:80%;
+    height:80%;
+    padding-left:15%;
+    padding-right:15%;
+    font-size:8px;
+}
+
+nav
+{
+    text-align:justify;
+}
+
+nav > ul > li
+{
+    display:inline;
+    padding-left:5%;
+}
+
+
+.site-footer
+{
+    text-align:center;
+    font-size:75%;
+}

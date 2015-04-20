@@ -1,0 +1,22 @@
+---
+layout: default
+---
+            <!-- todo: back button? -->
+            <div class="project">
+                <div class="project-header">
+                    <span class="project-logo"><img src="{{page.logo}}" alt="logo"/></span> <span class="project-catchphrase">{{page.catchphrase}}</span>
+                    <h1>
+                        {{page.title}} - {{page.brief}}
+                    </h1>
+                    <h2>
+                        Started: {{page.start}}<br/>
+                        Status: <span class="status" style="color:{{page.status-color}};">{{page.status}}</span>
+                    </h2>
+                </div>
+                <div class="project-content">
+{{content}}
+                </div>
+                <div class="project-footer">
+
+                </div>
+            </div>

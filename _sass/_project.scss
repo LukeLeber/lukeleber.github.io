@@ -1,0 +1,64 @@
+.project-wrapper
+{
+    font-family:monospace;
+    padding-left:5%;
+    padding-top:1%;
+    padding-bottom:5%;
+}
+
+.projects > ul
+{
+    list-style:none;
+}
+
+.projects > h1
+{
+    padding-left:5%;
+    padding-right:5%;
+}
+
+.projects > h2
+{
+    padding-left:5%;
+    padding-right:5%;
+}
+
+.project-wrapper > a > img
+{
+    padding-right:2.5%;
+    border-radius:10px;
+    max-width:7.5%;
+    max-height:7.5%;
+    vertical-align: middle;
+}
+
+.project-title
+{
+    vertical-align:middle;
+}
+
+.project-brief
+{
+    vertical-align:middle;
+}
+
+
+.project
+{
+    padding-left:5%;
+    width:80%;
+}
+
+.project-logo > img
+{
+    vertical-align:middle;
+    width:10%; 
+    height:10%;
+    border-radius: 2.5%;    
+}
+
+.project-catchphrase
+{
+    vertical-align:middle;
+    font-size:100%;
+}

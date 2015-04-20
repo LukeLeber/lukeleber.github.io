@@ -1,0 +1,17 @@
+---
+layout: oss-project
+
+title:  "My Website"
+brief:  "hosting provided courtesy of github"
+catchphrase: "<a href=\"http://lukeleber.github.io\">lukeleber.github.io</a>"
+author: "Luke Leber"
+meta:   "this website?"
+start:   "March, 2015"
+status: "ongoing"
+status-color: "#00FF00"
+logo:   "/img/oss-projects/lukeleber.github.io/logo.png"
+
+categories: oss-projects
+---
+
+This website!  Though the final product is static in nature, it is dynamically generated via the amazing <a href="http://jekyllrb.com">jekyll</a> tool.  Designed to be a mobile-friendly, responsive website, the complete (live) source code is freely available on its <a href="https://github.com/lukeleber/lukeleber.github.io/">repository</a>.

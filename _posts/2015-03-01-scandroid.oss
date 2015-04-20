@@ -1,0 +1,42 @@
+---
+layout: oss-project
+
+title: "Scandroid"
+brief: "the free automotive scan tool for android"
+catchphrase: ""
+author: "Luke Leber"
+meta: "this website?"
+start: "November, 2014"
+status: "ongoing"
+status-color: "#00FF00"
+logo: "/img/oss-projects/scandroid/logo.png"
+categories: oss-projects
+---
+                    Scandroid is an implementation of a collection of various ISO/SAE 
+                    standards that allows an android powered device to connect a vehicle 
+                    and perform a variety of operations including each of the diagnostic 
+                    test modes specified by SAE J1979.  The underlying API is written in 
+                    pure Java and is provided to users via an Android GUI wrapper, although 
+                    any language could be used to create a GUI if it is able to utilize 
+                    Java libraries.
+                    <br/>
+                    <br/>
+                    The current build may be downloaded directly <a href=localhost:4000/Scandroid/Scandroid.apk>here</a>.
+                    <br/>
+                    <br/>
+                    Future endeavors (at this point) are expected to be:
+                    <br/>
+                    <ul>
+                        <li>Providing various communication interfaces (physical) such as WiFi 
+                    and USB in addition to the existing bluetooth interface.</li>
+                        <li>Providing various open source hardware setups such as arduino 
+                    and raspberry pi RS232 to OBDII interpreters</li>
+                        <li>Providing a SMS mode for remote diagnostic sessions with Scandroid 
+                    compatible vehicles from all around the world.</li>
+                        <li>To obtain various manufacturer specific information, specifications, 
+                    procedures, and other functionality and make it available for the 
+                    public for free.</li>
+                    </ul>
+                    <br/>
+                    <br/>
+                    This project is still in early development, so stay tuned for updates.

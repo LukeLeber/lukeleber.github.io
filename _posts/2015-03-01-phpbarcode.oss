@@ -1,0 +1,31 @@
+---
+layout: oss-project
+
+title:  "phpbarcode"
+brief:  "the simple barcode renderer for php"
+catchphrase: ""
+author: "Luke Leber"
+meta:   "this website?"
+start:   "March, 2015"
+status: "on hold"
+status-color: "#FFFF00"
+logo:   "/img/oss-projects/phpbarcode/logo.png"
+
+categories: oss-projects
+---
+
+Often times the best solution for a particular problem is also the 
+most simple solution.  That's what phpbarcode offers first and 
+foremost: simplicity.  For those users that require more 
+flexibility, phpbarcode offers several areas of customization 
+including various encoding mechanisms and rendering implementations.
+<br/><br/>
+Example Usage:<br/><br/>
+{% highlight php %}
+/// render a single barcode to a dynamic image using the code-128 encoder
+/// the code below will output the same barcode as depicted in the phpbarcode logo
+$text = 'phpbarcode';
+$encoder = new com\github\lukeleber\phpbarcode\detail\Code128();
+$encoding = implode($encoder->encode($text), '');
+echo "&lt;img src=\"render.php?encoding=" . $encoding\">";
+{% endhighlight %}
