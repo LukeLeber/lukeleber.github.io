@@ -136,7 +136,7 @@ var client = new ZeroClipboard( document.getElementById("copy-button") );
                   $('#output').val("");
                });
 
-            $('#generator').on('submit', generate);
+            $('#generate').on('click', generate);
 
          });
       </script>
@@ -418,7 +418,7 @@ var client = new ZeroClipboard( document.getElementById("copy-button") );
             <label for="delete-radio">Delete</label>
             <input type="radio" id="delete-radio" name="updatedelete" value="delete"><br>
             <br/><br/>
-            <input type="submit" value="Generate">
+            <button id="submit" value="Generate">
          </form>
          <h2>Output</h2>
           <textarea readonly id="output" rows="20" cols="100"></textarea><br/>
