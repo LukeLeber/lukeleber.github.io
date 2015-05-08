@@ -4,7 +4,6 @@
       <meta charset="utf-8" />
       <title>Amazon Shipping Template Generator</title>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-               <script src="ZeroClipboard.js"></script>
       <script>
 
 function generate(event)
@@ -44,14 +43,13 @@ function generate(event)
             }
          $(function()
          {
-var client = new ZeroClipboard( document.getElementById("copy-button") );
 
-  client.on( "aftercopy", function( event ) {
-    // `this` === `client`
-    // `event.target` === the element that was clicked
-//    event.target.style.display = "none";
-    //alert("Copied text to clipboard: " + event.data["text/plain"] );
-  } );
+         	$("#select-all-button").on('click', function()
+         		{
+         			$("#output").select();
+         			$("#output").animate({scrollTop:0});
+         		});
+
 
             $("#price1").on('input', function()
             {
@@ -136,7 +134,7 @@ var client = new ZeroClipboard( document.getElementById("copy-button") );
                   $('#output').val("");
                });
 
-            $('#generate').on('click', generate);
+            $('#generator').on('submit', generate);
 
          });
       </script>
@@ -417,12 +415,17 @@ var client = new ZeroClipboard( document.getElementById("copy-button") );
             <input type="radio" id="update-radio" name="updatedelete" value="update" required checked>
             <label for="delete-radio">Delete</label>
             <input type="radio" id="delete-radio" name="updatedelete" value="delete"><br>
-            <br/><br/>
-            <button id="submit" value="Generate">
+                        <br/><br/>
+
+            <input type="submit" id="submit" value="Generate">
          </form>
+
+         <br/>
+         <hr/>
          <h2>Output</h2>
           <textarea readonly id="output" rows="20" cols="100"></textarea><br/>
-          <button id="copy-button" data-clipboard-target="output" title="Click to copy me.">Copy to Clipboard</button>          <input type="submit" id="clear" value="Clear">
+          <button id="select-all-button" title="select all.">Select All</button>
+          <input type="submit" id="clear" value="Clear">
 
           </div>
    </body>
