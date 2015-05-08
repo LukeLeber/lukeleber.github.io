@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Amazon Shipping Template Generator</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+               <script src="ZeroClipboard.js"></script>
+      <script>
+
+function generate(event)
+            {
+               if(event != undefined)
+               {
+                  //event.preventDefault();                  
+               }
+                  var sku = $("[name='sku']").val();
+                  var currency = $("[name='currency']").val();
+                  var opt1 = $("[name='shipping-method-1']").val();
+                  var opt2 = $("[name='shipping-method-2']").val();
+                  var opt3 = $("[name='shipping-method-3']").val();
+                  var opt4 = $("[name='shipping-method-4']").val();
+                  var opt5 = $("[name='shipping-method-5']").val();
+                  var opt6 = $("[name='shipping-method-6']").val();
+                  var price1 = $("#price1").val();
+                  var price2 = $("#price2").val();
+                  var price3 = $("#price3").val();
+                  var price4 = $("#price4").val();
+                  var price5 = $("#price5").val();
+                  var price6 = $("#price6").val();
+                  var type1 = $("[name='type1']:checked").val();
+                  var type2 = $("[name='type2']:checked").val();
+                  var type3 = $("[name='type3']:checked").val();
+                  var type4 = $("[name='type4']:checked").val();
+                  var type5 = $("[name='type5']:checked").val();
+                  var type6 = $("[name='type6']:checked").val();
+                  var restrict1 = $("[name='restricted1']").val() == 'on' ? 'yes' : 'no';
+                  var restrict2 = $("[name='restricted2']").val() == 'on' ? 'yes' : 'no';
+                  var restrict3 = $("[name='restricted3']").val() == 'on' ? 'yes' : 'no';
+                  var restrict4 = $("[name='restricted4']").val() == 'on' ? 'yes' : 'no';
+                  var restrict5 = $("[name='restricted5']").val() == 'on' ? 'yes' : 'no';
+                  var restrict6 = $("[name='restricted6']").val() == 'on' ? 'yes' : 'no';
+                  var updatedelete = $("[name='updatedelete']:checked").val();
+                  $("#output").val("TemplateType=Overrides  Version=2.0 This row for Amazon.com use only.  Do not modify or delete.\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\nsku\tCurrency\tShipOption1\tShippingAmt1\tType1\tIsShippingRestricted1\tShipOption2\tShippingAmt2\tType2\tIsShippingRestricted2\tShipOption3\tShippingAmt3\tType3\tIsShippingRestricted3\tShipOption4\tShippingAmt4\tType4\tIsShippingRestricted4\tShipOption5\tShippingAmt5\tType5\tIsShippingRestricted5\tShipOption6\tShippingAmt6\tType6\tIsShippingRestricted6\tUpdateDelete\t\t\t\t\t\n" + sku + "\t" + currency + "\t" + opt1 + "\t" + price1 + "\t" + type1 + "\t" + restrict1 + "\t" + opt2 + "\t" + price2 + "\t" + type2 + "\t" + restrict2 + "\t" + opt3 + "\t" + price3 + "\t" + type3 + "\t" + restrict3 + "\t" + opt4 + "\t" + price4 + "\t" + type4 + "\t" + restrict4 + "\t" + opt5 + "\t" + price5 + "\t" + type5 + "\t" + restrict5 + "\t" + opt6 + "\t" + price6 + "\t" + type6 + "\t" + restrict6 + "\t" + updatedelete + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n");
+            }
+         $(function()
+         {
+var client = new ZeroClipboard( document.getElementById("copy-button") );
+
+  client.on( "aftercopy", function( event ) {
+    // `this` === `client`
+    // `event.target` === the element that was clicked
+    event.target.style.display = "none";
+    alert("Copied text to clipboard: " + event.data["text/plain"] );
+  } );
+
+            $("#price1").on('input', function()
+            {
+               if($("#price-match").prop('checked'))
+               {
+                  var v = $(this).val();  
+                  $(".price:not(#price1)").each(function()
+                  {
+                     $(this).val(v);
+                  });
+               }
+               generate();
+            });
+            $("#price2").on('input', function()
+            {
+               if($("#price-match").prop('checked'))
+               {
+                  var v = $(this).val();  
+                  $(".price:not(#price2)").each(function()
+                  {
+                     $(this).val(v);
+                  });
+               }
+               generate();
+            });
+            $("#price3").on('input', function()
+            {
+               if($("#price-match").prop('checked'))
+               {
+                  var v = $(this).val();  
+                  $(".price:not(#price3)").each(function()
+                  {
+                     $(this).val(v);
+                  });
+               }
+               generate();
+            });
+            $("#price4").on('input', function()
+            {
+               if($("#price-match").prop('checked'))
+               {
+                  var v = $(this).val();  
+                  $(".price:not(#price4)").each(function()
+                  {
+                     $(this).val(v);
+                  });
+               }
+               generate();
+            });
+            $("#price5").on('input', function()
+            {
+               if($("#price-match").prop('checked'))
+               {
+                  var v = $(this).val();  
+                  $(".price:not(#price5)").each(function()
+                  {
+                     $(this).val(v);
+                  });
+               }
+               generate();
+            });
+            $("#price6").on('input', function()
+            {
+               if($("#price-match").prop('checked'))
+               {
+                  var v = $(this).val();  
+                  $(".price:not(#price6)").each(function()
+                  {
+                     $(this).val(v);
+                  });
+               }
+               generate();
+            });
+
+            
+
+            $(".shipping-method").on('change', generate);
+
+            $('#clear').on('click', function(event)
+               {
+                  event.preventDefault();
+                  $('#output').val("");
+               });
+
+            $('#generator').on('submit', generate);
+
+         });
+      </script>
+      <style>
+
+         #configuration
+         {
+            text-align:center;
+         }
+
+         .left
+         {
+            text-align:center;
+         }
+
+         .right
+         {
+            text-align:center;
+         }
+
+         .price
+         {
+            margin-right:2%;
+         }
+
+      </style>
+   </head>
+   <body>
+      <div class="left">
+      <h1>Amazon Shipping Template Generator</h1>
+      <h2>Another miscellaneous part of <a href="#">Frankenstein</a></h2>
+      <hr/>
+      <div id="configuration">
+
+      Configuration:<br/>
+      <input id = "price-match" type="checkbox" checked/> Autofill Prices<br/>
+      <input id = "generate-embedded" type="checkbox" checked /> Generate Embedded
+      </div>
+      <br/><br/>
+         <form id="generator">
+            SKU: 
+            <input type="text" name="sku" placeholder="enter part #" required><br/>
+            Currency: 
+            <input type="radio" name="currency" value="USD" required checked>USD
+            <input type="radio" name="currency" value="CAD">CAD
+            <input type="radio" name="currency" value="GBP">GBP
+            <input type="radio" name="currency" value="EUR">EUR
+            <input type="radio" name="currency" value="GPY">GPY<br/><br/>
+            Option 1: 
+            <select class="shipping-method" name="shipping-method-1"  required>
+               <option label="Select a shipping option"></option>
+               <option value="Exp APO/FPO PO Box">Exp APO/FPO PO Box</option>
+               <option value="xp APO/FPO Street Addr">Exp APO/FPO Street Addr</option>
+               <option value="Exp Alaska Hawaii PO Box">Exp Alaska Hawaii PO Box</option>
+               <option value="Exp Alaska Hawaii Street Addr">Exp Alaska Hawaii Street Addr</option>
+               <option value="Exp Asia">Exp Asia</option>
+               <option value="Exp Canada">"Exp Canada</option>
+               <option value="Exp Cont US PO Box">Exp Cont US PO Box</option>
+               <option value="Exp Cont US Street Addr">Exp Cont US Street Addr</option>
+               <option value="Exp Europe">Exp Europe</option>
+               <option value="Exp Outside US, EU, CA, Asia">Exp Outside US, EU, CA, Asia</option>
+               <option value="Exp US Prot PO Box">Exp US Prot PO Box</option>
+               <option value="Exp US Prot Street Addr">Exp US Prot Street Addr</option>
+               <option value="Std APO/FPO PO Box">Std APO/FPO PO Box</option>
+               <option value="Std APO/FPO Street Addr">Std APO/FPO Street Addr</option>
+               <option value="Std Alaska Hawaii PO Box">Std Alaska Hawaii PO Box</option>
+               <option value="Std Alaska Hawaii Street Addr">Std Alaska Hawaii Street Addr</option>
+               <option value="Std Asia">Std Asia</option>
+               <option value="Std Canada">Std Canada</option>
+               <option value="Std Cont US PO Box">Std Cont US PO Box</option>
+               <option value="Std Cont US Street Addr">Std Cont US Street Addr</option>
+               <option value="Std Europe">Std Europe</option>
+               <option value="Std Outside US, EU, CA, Asia">Std Outside US, EU, CA, Asia</option>
+               <option value="Std US Prot PO Box">Std US Prot PO Box</option>
+               <option value="Std US Prot Street Addr" selected>Std US Prot Street Addr</option>
+               <option value="Next">Next</option>
+               <option value="Second">Second</option>
+               <option value="Same US">Same US</option>
+               <option value="Econ Cont US">Econ Cont US</option>
+            </select>
+            Price: <input type="number" step="0.01" class="price" id="price1" placeholder="$$$.&cent;&cent;" value="0.00">
+            <label for="type1_additive">Additive</label>
+            <input type="radio" id="type1_additive" name="type1" value="Additive">
+            <label for="type1_exclusive">Exclusive</label>
+            <input type="radio" id="type1_exclusive" name="type1" value="Exclusive" required checked>
+            <input type="checkbox" name="restricted1" > Restricted<br>
+            Option 2: 
+            <select class="shipping-method" name="shipping-method-2" required>
+               <option label="Select a shipping option"></option>
+               <option value="Exp APO/FPO PO Box">Exp APO/FPO PO Box</option>
+               <option value="xp APO/FPO Street Addr">Exp APO/FPO Street Addr</option>
+               <option value="Exp Alaska Hawaii PO Box">Exp Alaska Hawaii PO Box</option>
+               <option value="Exp Alaska Hawaii Street Addr">Exp Alaska Hawaii Street Addr</option>
+               <option value="Exp Asia">Exp Asia</option>
+               <option value="Exp Canada">"Exp Canada</option>
+               <option value="Exp Cont US PO Box">Exp Cont US PO Box</option>
+               <option value="Exp Cont US Street Addr">Exp Cont US Street Addr</option>
+               <option value="Exp Europe">Exp Europe</option>
+               <option value="Exp Outside US, EU, CA, Asia">Exp Outside US, EU, CA, Asia</option>
+               <option value="Exp US Prot PO Box">Exp US Prot PO Box</option>
+               <option value="Exp US Prot Street Addr">Exp US Prot Street Addr</option>
+               <option value="Std APO/FPO PO Box">Std APO/FPO PO Box</option>
+               <option value="Std APO/FPO Street Addr">Std APO/FPO Street Addr</option>
+               <option value="Std Alaska Hawaii PO Box">Std Alaska Hawaii PO Box</option>
+               <option value="Std Alaska Hawaii Street Addr">Std Alaska Hawaii Street Addr</option>
+               <option value="Std Asia">Std Asia</option>
+               <option value="Std Canada">Std Canada</option>
+               <option value="Std Cont US PO Box">Std Cont US PO Box</option>
+               <option value="Std Cont US Street Addr">Std Cont US Street Addr</option>
+               <option value="Std Europe">Std Europe</option>
+               <option value="Std Outside US, EU, CA, Asia">Std Outside US, EU, CA, Asia</option>
+               <option value="Std US Prot PO Box" selected>Std US Prot PO Box</option>
+               <option value="Std US Prot Street Addr">Std US Prot Street Addr</option>
+               <option value="Next">Next</option>
+               <option value="Second">Second</option>
+               <option value="Same US">Same US</option>
+               <option value="Econ Cont US">Econ Cont US</option>
+            </select>
+            Price: <input type="number" step="0.01" class="price" id="price2" placeholder="$$$.&cent;&cent;" value="0.00">
+            <label for="type2_additive">Additive</label>
+            <input type="radio" id="type2_additive" name="type2" value="Additive" required>
+            <label for="type2_exclusive">Exclusive</label>
+            <input type="radio" id="type2_exclusive" name="type2" value="Exclusive" checked>
+            <input type="checkbox" name="restricted2" > Restricted<br>
+            Option 3: 
+            <select class="shipping-method" name="shipping-method-3" required>
+               <option label="Select a shipping option"></option>
+               <option value="Exp APO/FPO PO Box">Exp APO/FPO PO Box</option>
+               <option value="xp APO/FPO Street Addr">Exp APO/FPO Street Addr</option>
+               <option value="Exp Alaska Hawaii PO Box">Exp Alaska Hawaii PO Box</option>
+               <option value="Exp Alaska Hawaii Street Addr">Exp Alaska Hawaii Street Addr</option>
+               <option value="Exp Asia">Exp Asia</option>
+               <option value="Exp Canada">"Exp Canada</option>
+               <option value="Exp Cont US PO Box">Exp Cont US PO Box</option>
+               <option value="Exp Cont US Street Addr">Exp Cont US Street Addr</option>
+               <option value="Exp Europe">Exp Europe</option>
+               <option value="Exp Outside US, EU, CA, Asia">Exp Outside US, EU, CA, Asia</option>
+               <option value="Exp US Prot PO Box">Exp US Prot PO Box</option>
+               <option value="Exp US Prot Street Addr">Exp US Prot Street Addr</option>
+               <option value="Std APO/FPO PO Box">Std APO/FPO PO Box</option>
+               <option value="Std APO/FPO Street Addr">Std APO/FPO Street Addr</option>
+               <option value="Std Alaska Hawaii PO Box">Std Alaska Hawaii PO Box</option>
+               <option value="Std Alaska Hawaii Street Addr">Std Alaska Hawaii Street Addr</option>
+               <option value="Std Asia">Std Asia</option>
+               <option value="Std Canada">Std Canada</option>
+               <option value="Std Cont US PO Box">Std Cont US PO Box</option>
+               <option value="Std Cont US Street Addr" selected>Std Cont US Street Addr</option>
+               <option value="Std Europe">Std Europe</option>
+               <option value="Std Outside US, EU, CA, Asia">Std Outside US, EU, CA, Asia</option>
+               <option value="Std US Prot PO Box">Std US Prot PO Box</option>
+               <option value="Std US Prot Street Addr">Std US Prot Street Addr</option>
+               <option value="Next">Next</option>
+               <option value="Second">Second</option>
+               <option value="Same US">Same US</option>
+               <option value="Econ Cont US">Econ Cont US</option>
+            </select>
+            Price: <input type="number" step="0.01" class="price" id="price3" placeholder="$$$.&cent;&cent;" value="0.00">
+            <label for="type3_additive">Additive</label>
+            <input type="radio" id="type3_additive" name="type3" value="Additive" required>
+            <label for="type3_exclusive">Exclusive</label>
+            <input type="radio" id="type3_exclusive" name="type3" value="Exclusive" checked>
+            <input type="checkbox" name="restricted3" > Restricted<br>
+            Option 4: 
+            <select class="shipping-method" name="shipping-method-4" required>
+               <option label="Select a shipping option"></option>
+               <option value="Exp APO/FPO PO Box">Exp APO/FPO PO Box</option>
+               <option value="xp APO/FPO Street Addr">Exp APO/FPO Street Addr</option>
+               <option value="Exp Alaska Hawaii PO Box">Exp Alaska Hawaii PO Box</option>
+               <option value="Exp Alaska Hawaii Street Addr">Exp Alaska Hawaii Street Addr</option>
+               <option value="Exp Asia">Exp Asia</option>
+               <option value="Exp Canada">"Exp Canada</option>
+               <option value="Exp Cont US PO Box">Exp Cont US PO Box</option>
+               <option value="Exp Cont US Street Addr">Exp Cont US Street Addr</option>
+               <option value="Exp Europe">Exp Europe</option>
+               <option value="Exp Outside US, EU, CA, Asia">Exp Outside US, EU, CA, Asia</option>
+               <option value="Exp US Prot PO Box">Exp US Prot PO Box</option>
+               <option value="Exp US Prot Street Addr">Exp US Prot Street Addr</option>
+               <option value="Std APO/FPO PO Box">Std APO/FPO PO Box</option>
+               <option value="Std APO/FPO Street Addr">Std APO/FPO Street Addr</option>
+               <option value="Std Alaska Hawaii PO Box">Std Alaska Hawaii PO Box</option>
+               <option value="Std Alaska Hawaii Street Addr">Std Alaska Hawaii Street Addr</option>
+               <option value="Std Asia">Std Asia</option>
+               <option value="Std Canada">Std Canada</option>
+               <option value="Std Cont US PO Box" selected>Std Cont US PO Box</option>
+               <option value="Std Cont US Street Addr">Std Cont US Street Addr</option>
+               <option value="Std Europe">Std Europe</option>
+               <option value="Std Outside US, EU, CA, Asia">Std Outside US, EU, CA, Asia</option>
+               <option value="Std US Prot PO Box">Std US Prot PO Box</option>
+               <option value="Std US Prot Street Addr">Std US Prot Street Addr</option>
+               <option value="Next">Next</option>
+               <option value="Second">Second</option>
+               <option value="Same US">Same US</option>
+               <option value="Econ Cont US">Econ Cont US</option>
+            </select>
+            Price: <input type="number" step="0.01" class="price" id="price4" placeholder="$$$.&cent;&cent;" value="0.00">
+            <label for="type4_additive">Additive</label>
+            <input type="radio" id="type4_additive" name="type4" value="Additive" required>
+            <label for="type4_exclusive">Exclusive</label>
+            <input type="radio" id="type4_exclusive" name="type4" value="Exclusive" checked>
+            <input type="checkbox" name="restricted4" > Restricted<br>
+            Option 5: 
+            <select class="shipping-method" name="shipping-method-5" required>
+               <option label="Select a shipping option"></option>
+               <option value="Exp APO/FPO PO Box">Exp APO/FPO PO Box</option>
+               <option value="xp APO/FPO Street Addr">Exp APO/FPO Street Addr</option>
+               <option value="Exp Alaska Hawaii PO Box">Exp Alaska Hawaii PO Box</option>
+               <option value="Exp Alaska Hawaii Street Addr">Exp Alaska Hawaii Street Addr</option>
+               <option value="Exp Asia">Exp Asia</option>
+               <option value="Exp Canada">"Exp Canada</option>
+               <option value="Exp Cont US PO Box">Exp Cont US PO Box</option>
+               <option value="Exp Cont US Street Addr">Exp Cont US Street Addr</option>
+               <option value="Exp Europe">Exp Europe</option>
+               <option value="Exp Outside US, EU, CA, Asia">Exp Outside US, EU, CA, Asia</option>
+               <option value="Exp US Prot PO Box">Exp US Prot PO Box</option>
+               <option value="Exp US Prot Street Addr">Exp US Prot Street Addr</option>
+               <option value="Std APO/FPO PO Box">Std APO/FPO PO Box</option>
+               <option value="Std APO/FPO Street Addr">Std APO/FPO Street Addr</option>
+               <option value="Std Alaska Hawaii PO Box">Std Alaska Hawaii PO Box</option>
+               <option value="Std Alaska Hawaii Street Addr" selected>Std Alaska Hawaii Street Addr</option>
+               <option value="Std Asia">Std Asia</option>
+               <option value="Std Canada">Std Canada</option>
+               <option value="Std Cont US PO Box">Std Cont US PO Box</option>
+               <option value="Std Cont US Street Addr">Std Cont US Street Addr</option>
+               <option value="Std Europe">Std Europe</option>
+               <option value="Std Outside US, EU, CA, Asia">Std Outside US, EU, CA, Asia</option>
+               <option value="Std US Prot PO Box">Std US Prot PO Box</option>
+               <option value="Std US Prot Street Addr">Std US Prot Street Addr</option>
+               <option value="Next">Next</option>
+               <option value="Second">Second</option>
+               <option value="Same US">Same US</option>
+               <option value="Econ Cont US">Econ Cont US</option>
+            </select>
+            Price: <input type="number" step="0.01" class="price" id="price5" placeholder="$$$.&cent;&cent;" value="0.00">
+            <label for="type5_additive">Additive</label>
+            <input type="radio" id="type5_additive" name="type5" value="Additive" required>
+            <label for="type5_exclusive">Exclusive</label>
+            <input type="radio" id="type5_exclusive" name="type5" value="Exclusive" checked>
+            <input type="checkbox" name="restricted5" checked> Restricted<br>
+            Option 6: 
+            <select class="shipping-method" name="shipping-method-6" required>
+               <option label="Select a shipping option"></option>
+               <option value="Exp APO/FPO PO Box">Exp APO/FPO PO Box</option>
+               <option value="xp APO/FPO Street Addr">Exp APO/FPO Street Addr</option>
+               <option value="Exp Alaska Hawaii PO Box">Exp Alaska Hawaii PO Box</option>
+               <option value="Exp Alaska Hawaii Street Addr">Exp Alaska Hawaii Street Addr</option>
+               <option value="Exp Asia">Exp Asia</option>
+               <option value="Exp Canada">"Exp Canada</option>
+               <option value="Exp Cont US PO Box">Exp Cont US PO Box</option>
+               <option value="Exp Cont US Street Addr">Exp Cont US Street Addr</option>
+               <option value="Exp Europe">Exp Europe</option>
+               <option value="Exp Outside US, EU, CA, Asia">Exp Outside US, EU, CA, Asia</option>
+               <option value="Exp US Prot PO Box">Exp US Prot PO Box</option>
+               <option value="Exp US Prot Street Addr">Exp US Prot Street Addr</option>
+               <option value="Std APO/FPO PO Box">Std APO/FPO PO Box</option>
+               <option value="Std APO/FPO Street Addr">Std APO/FPO Street Addr</option>
+               <option value="Std Alaska Hawaii PO Box" selected>Std Alaska Hawaii PO Box</option>
+               <option value="Std Alaska Hawaii Street Addr">Std Alaska Hawaii Street Addr</option>
+               <option value="Std Asia">Std Asia</option>
+               <option value="Std Canada">Std Canada</option>
+               <option value="Std Cont US PO Box">Std Cont US PO Box</option>
+               <option value="Std Cont US Street Addr">Std Cont US Street Addr</option>
+               <option value="Std Europe">Std Europe</option>
+               <option value="Std Outside US, EU, CA, Asia">Std Outside US, EU, CA, Asia</option>
+               <option value="Std US Prot PO Box">Std US Prot PO Box</option>
+               <option value="Std US Prot Street Addr">Std US Prot Street Addr</option>
+               <option value="Next">Next</option>
+               <option value="Second">Second</option>
+               <option value="Same US">Same US</option>
+               <option value="Econ Cont US">Econ Cont US</option>
+            </select>
+            Price: <input type="number" step="0.01" class="price" id="price6" placeholder="$$$.&cent;&cent;" value="0.00">
+            <label for="type6_additive">Additive</label>
+            <input type="radio" id="type6_additive" name="type6" value="Additive" required>
+            <label for="type6_exclusive">Exclusive</label>
+            <input type="radio" id="type6_exclusive" name="type6" value="Exclusive" checked>
+            <input type="checkbox" name="restricted6" checked> Restricted<br><br>
+            <label for="update-radio">Update</label>
+            <input type="radio" id="update-radio" name="updatedelete" value="update" required checked>
+            <label for="delete-radio">Delete</label>
+            <input type="radio" id="delete-radio" name="updatedelete" value="delete"><br>
+            <br/><br/>
+            <input type="submit" value="Generate">
+         </form>
+         <h2>Output</h2>
+          <textarea readonly id="output" rows="20" cols="100"></textarea><br/>
+          <button id="copy-button" data-clipboard-target="output" title="Click to copy me.">Copy to Clipboard ( broken :-\ )</button>          <input type="submit" id="clear" value="Clear">
+
+          </div>
+   </body>
+</html>
