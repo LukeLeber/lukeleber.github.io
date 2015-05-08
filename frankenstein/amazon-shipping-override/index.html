@@ -49,8 +49,8 @@ var client = new ZeroClipboard( document.getElementById("copy-button") );
   client.on( "aftercopy", function( event ) {
     // `this` === `client`
     // `event.target` === the element that was clicked
-    event.target.style.display = "none";
-    alert("Copied text to clipboard: " + event.data["text/plain"] );
+//    event.target.style.display = "none";
+    //alert("Copied text to clipboard: " + event.data["text/plain"] );
   } );
 
             $("#price1").on('input', function()
@@ -422,7 +422,7 @@ var client = new ZeroClipboard( document.getElementById("copy-button") );
          </form>
          <h2>Output</h2>
           <textarea readonly id="output" rows="20" cols="100"></textarea><br/>
-          <button id="copy-button" data-clipboard-target="output" title="Click to copy me.">Copy to Clipboard ( broken :-\ )</button>          <input type="submit" id="clear" value="Clear">
+          <button id="copy-button" data-clipboard-target="output" title="Click to copy me.">Copy to Clipboard</button>          <input type="submit" id="clear" value="Clear">
 
           </div>
    </body>
